@@ -1,0 +1,38 @@
+<LawyerFeeCalculator>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 150
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: (1, 0.1)
+        spacing: 150
+        TextInput:
+            id: input_box
+            hint_text: "输入金额"
+            multiline: False
+            font_size: 24
+            size_hint: (1, 0.1)
+            input_filter: 'float'
+            font_name: 'DouyinSansBold.ttf'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: (1, 0.9)
+        spacing: 5
+        Button:
+            text: "计算律师费"
+            font_size: 24
+            size_hint: (1, 0.1)
+            on_press: root.calculate_fee()
+            font_name: 'DouyinSansBold.ttf'
+
+        Label:
+            id: output_label
+            text: "律师费区间将显示在这里"
+            font_size: 24
+            size_hint: (1, 0.8)
+            text_size: self.width, None
+            halign: 'center'
+            valign: 'middle'
+            font_name: 'DouyinSansBold.ttf'
